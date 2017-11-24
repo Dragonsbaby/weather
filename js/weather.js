@@ -242,35 +242,4 @@ var isExist = function (O) {
 
 
 
-var makeNext = function (str,next) {
-    var q = 0;
-    var k = 0;
-    var len = str.length;
-
-    next[0] = 0;
-
-    for(q = 1,k = 0; q < len; q++){
-        while( k > 0 && str[q] != str[k]) {
-            k = next[k - 1];
-        }
-        if(str[q]  == str[k]){
-            k++;
-        }
-        next[q] = k;
-    }
-    console.log(next);
-    return next;
-
-};
-
-
-
-var arrTest = new Array(20);
-for(var i = 0; i < 20; i++){
-    arrTest[i] = 0;
-}
-
-var strTest = 'ABCDABDABC'
-makeNext(strTest.split(''),arrTest);
-
 
